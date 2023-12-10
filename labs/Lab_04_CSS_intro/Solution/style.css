@@ -1,0 +1,49 @@
+body {}
+
+img {width: 210px;}
+
+h1, h2, h3 {color: rgb(26, 3, 64);}
+
+div {
+  background-image: url('rgups.jpg');
+  background-size: cover;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 31px;
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: normal;
+  padding-top: 45px;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 31px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  line-height: 18px;
+  font-weight: normal;
+  margin: 0;
+  margin-top: -10;
+}
+
+img {
+  margin-bottom: 40px;
+}
+
+p {
+  margin: 0;
+  line-height: 2;
+  text-align: center;
+  color: rgb(38, 25, 131);
+}
