@@ -1,0 +1,119 @@
+:root {
+  --success-color: #0cb854;
+  --error-color: #ee1f09;
+}
+
+html {
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1920px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  padding-left: 0;
+}
+
+textarea,
+input {
+  outline: none;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.main__box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.box__left-control {
+  margin-bottom: 10px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.box__left-control label {
+  color: rgb(58, 58, 58);
+  display: block;
+}
+
+label {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.box__left-control input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #8f8f8f88;
+  cursor: pointer;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+.box__left-control input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+.box__left-control.success input {
+  border-color: green;
+}
+
+.box__left-control.error input {
+  border-color: var(--error-color);
+}
+
+.box__left-control span {
+  color: var(--error-color);
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.box__left-control.error span {
+  visibility: visible;
+}
+
+.main__box-right {
+  width: 300px;
+  height: 300px;
+  color: rgb(red, green, blue);
+}
