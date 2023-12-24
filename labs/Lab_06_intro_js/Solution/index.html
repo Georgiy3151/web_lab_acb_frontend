@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+<script>
+    // Задание 1
+    let apple = 10;
+    alert(apple);
+    console.log(apple);
+
+    let condition = "случайная строка";
+    console.log('Good game is ' + condition);
+
+    // Задание 2
+    let someInt = 5;
+    let someText = '100';
+    let someBool = true;
+
+    console.log(someText + someInt);
+    console.log(someText + someBool);
+    console.log(someInt + someBool);
+
+    // Задание 3
+    let arr = new Array(10);
+    for(let i=0; i<arr.length; i++) {
+        arr[i] = Math.random();
+    }
+    let filteredArr = arr.filter(num => num >= 0);
+
+    // Задание 4
+    function getRandomNumber() {
+        return Math.random();
+    }
+    console.log(getRandomNumber());
+
+    function multiplyArray(arr, num) {
+        return arr.map(element => element * num);
+    }
+
+    let generateWord = function() {
+        let text = "";
+        let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+        for (let i = 0; i < 5; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return text;
+    };
+    console.log(generateWord());
+
+    // Работа с объектами
+    let obj = {};
+    
+    obj.firstName = "Георгий";
+    obj.surname = "Вольвак";
+    obj.patronymic = "Витальевич";
+    obj.birthday = "2004";
+    obj.hobby = "заниматься спортом";
+    obj.group = "32";
+
+    
+    obj.getInfo = function() {
+        let currentYear = new Date().getFullYear();
+        let age = currentYear - this.birthday.split(".")[2];
+        return this.surname + " " + this.firstName + " " + this.patronymic + ", " + this.birthday + ", " + this.hobby + ", " + age;
+    };
+    
+    alert(obj.getInfo());
+
+    
+    let salaries = {
+        "Пушкин": 2000,
+        "Есенин": 1500,
+        "Куриленко": 3100,
+        
+        
+        totalSalary: function() {
+            let totalSalary = 0;
+            for(let key in this) {
+                if(typeof this[key] === 'number') {
+                    totalSalary += this[key];
+                }
+            }
+            return totalSalary;
+        }
+        
+      };
+      
+      console.log(salaries.totalSalary());
+</script>
+</body>
+</html>
