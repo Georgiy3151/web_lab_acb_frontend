@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>JS</title>
+</head>
+<body>
+<script>
+    console.log("Задание №1");
+    let a = prompt('Первое значение'); 
+    let b = prompt('Второе значение');
+    a === b ? console.log('a==b - Equally') : console.log('a==b - Different');
+    let world = 'world'; 
+    let sum = a + world;
+    console.log(`${a} + ${world} = ${sum}`);
+
+    console.log("Задание №2");
+    let f = new Array('apple', 'strawberry', 'blueberry', 'raspberry', 'lemon');
+    for ( let i = 0; i < f.length - 1; i++)
+    {
+        console.log(f[i]);
+        if(f[i] === 'apple'){
+            console.log('apple green')
+        }
+        else if (f[i] === 'strawberry') {
+            console.log('strawberry red')
+        }
+        else if (f[i] === 'blueberry') {
+            console.log('blueberry blue')
+        }
+        else if (f[i] === 'raspberry') {
+            console.log('raspberry light red')
+        }
+        else if (f[i] === 'lemon') {
+            console.log('lemon yellow')
+        }
+    }
+
+    console.log("Задание №3");
+    let numPers;
+    do {
+        numPers = prompt('Введите кол-во человек ', undefined);
+        if (!isNaN(parseFloat(numPers))) {
+        numPers = parseFloat(numPers)
+        } 
+        else {
+            numPers = 0;
+        } 
+    } while(numPers === 0)
+    
+    let slr 
+    do{
+        slr = prompt('Введите зарплату на человека ', undefined);
+        if (!isNaN(parseFloat(slr))) {
+            slr = parseFloat(slr);
+        } else {
+            slr = 0;
+        }
+    } while(numPers === 0)
+
+    let ttlCost = numPers * slr;
+    alert(`Затраты на ЗП: ${ttlCost}`);
+    console.log(`Количество работников: ${numPers}`);
+    console.log(`Затраты на ЗП: ${ttlCost}`);
+
+    console.log("Задание №4");
+    let Studs = [
+        {FIO:'Петров А.А.', grade:5},
+        {FIO:'Иванов Б.Б.', grade:3.4},
+        {FIO:'Сидоров Г.Г.', grade:9},
+        {FIO:'Немолодой Д.Д', grade:2},
+        {FIO:'Молодой Е.Е', grade:3.4}
+    ];
+    let s = 0;
+    let amount = 0;
+    let badStuds = [];
+
+    for (let index=0; index < Studs.length; index++)
+    {
+        if (Studs[index].grade > 5 || Studs[index].grade < 0) {
+            console.log(`Оценка ${Studs[index].grade} - Это значение учитываться не будет оно не соответствует допустимым значениям`);
+            continue;
+        }
+
+        if (!(Studs[index].grade <= 5 && Studs[index].grade >= 0)) {
+            continue;
+        }
+        if (Studs[index].grade<4) {
+            badStuds.push(Studs[index])
+        }
+        s += Studs[index].grade;
+        amount += 1 ;
+    }
+    s /= amount;
+    console.log(`Средняя оценка: ${s}`);
+    console.log('Плохие студенты:');
+    if(  badStuds.length === 0 ) {
+        console.log('Таких нет');
+    }
+    else {
+        badStuds.forEach((value) => {
+            console.log(`Фио: ${value.FIO}; Оценка: ${value.grade}`)
+        });
+    }
+</script>
+</body>
+</html>
