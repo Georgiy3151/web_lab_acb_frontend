@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа №8</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    main{
+        display: flex;
+        justify-content: space-around;
+    }
+    .input{
+        font-family: 'Rubik', sans-serif;
+        display: grid;
+        grid-gap: 10px;
+
+    }
+    .inBlock{
+        margin-top: 80px;
+        width: 150px;
+    }
+    .square{
+        padding:10%;
+    }
+    .blocks-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+        min-height: 300px;
+        justify-content: space-around;
+        align-content: center;
+    }
+    .color-block {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+    }
+</style>
+<body id="body">
+    <main>
+        <div class="inBlock">
+            <div class="input">
+                <label>red</label>
+                <input type="number" id="redIn" min="0" max="255">
+
+                <label>green</label>
+                <input type="number" id="greenIn" min="0" max="255">
+
+                <label>blue</label>
+                <input type="number" id="blueIn" min="0" max="255">
+                <button id="generateButton" onclick="generateColorBlock()">Сгенерировать</button>
+            </div>
+
+        </div>
+        <div id="square" class="square" style="background-color: black;"></div>
+    </main>
+    <div class="blocks-container" id="blocksContainer"></div>
+    <script src="app.js"></script>
+</body>
+</html>
